@@ -21,7 +21,7 @@ public class CartPage {
     //  Наличие блока с продуктом на странице
     public boolean isProductInPage(String productName) {
         try {
-            driver.findElement(By.xpath(String.format(productNamePattern,productName)));
+            driver.findElement(By.xpath(String.format(productNamePattern,productName))).isDisplayed();
             return true;
         } catch (NoSuchElementException e) {
             return false;

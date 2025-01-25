@@ -16,7 +16,7 @@ public class PrimaryHeaderPage {
 
     public boolean isShoppingCartBadge() {
         try {
-            driver.findElement(shoppingCartBadge);
+            driver.findElement(shoppingCartBadge).isDisplayed();
             return true;
         } catch (NoSuchElementException e) {
             return false;
