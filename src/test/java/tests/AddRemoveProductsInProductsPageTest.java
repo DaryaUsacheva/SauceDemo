@@ -1,10 +1,11 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-public class AddRemoveProductsInProductPageTest extends BaseTest {
+public class AddRemoveProductsInProductsPageTest extends BaseTest {
 
     @BeforeMethod
     public void login(){
@@ -12,10 +13,19 @@ public class AddRemoveProductsInProductPageTest extends BaseTest {
         loginPage.login("standard_user","secret_sauce");
     }
 
-    @Test
+    @Test(testName = "Добавление одного продукта",
+            groups = {"smoke","cart","ui"},
+            timeOut = 5000,
+            description = "Добавление одного продукта с общей страницы",
+            retryAnalyzer = Retry.class)
+    @Description("Добавление одного продукта с общей страницы")
+    @Severity(SeverityLevel.CRITICAL)
+    @Epic("SauseDemo-1.0")
+    @Feature("Cart in SauseDemo")
+    @Story("Добавление товаров в корзину")
     public void addOneProduct() {
         SoftAssert softAssert = new SoftAssert();
-        String productName = "Sauce Labs Backpack";
+        String productName = productsPage.getProductName();
         softAssert.assertEquals(productsPage.getButtonAddOrRemove(productName),"Add to cart");
         productsPage.clickButtonAddOrRemove(productName);
         softAssert.assertEquals(primaryHeaderPage.getShoppingCartBadge(),"1");
@@ -24,11 +34,23 @@ public class AddRemoveProductsInProductPageTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test
+    @Test(testName = "Добавление двух продуктов",
+            groups = {"regress","cart","ui"},
+            timeOut = 5000,
+            description = "Добавление двух продуктов с общей страницы",
+            retryAnalyzer = Retry.class)
+    @Description("Добавление двух продуктов с общей страницы")
+    @Severity(SeverityLevel.CRITICAL)
+    @Epic("SauseDemo-1.0")
+    @Feature("Cart in SauseDemo")
+    @Story("Добавление товаров в корзину")
+    @TmsLink("ссылка на жиру")
+    @Issue("ссылка на баг")
+    @Flaky
     public void addTwoProducts() {
         SoftAssert softAssert = new SoftAssert();
-        String productName1 = "Sauce Labs Backpack";
-        String productName2 = "Sauce Labs Bolt T-Shirt";
+        String productName1 = productsPage.getProductName();
+        String productName2 = productsPage.getProductName();
         softAssert.assertEquals(productsPage.getButtonAddOrRemove(productName1),"Add to cart");
         productsPage.clickButtonAddOrRemove(productName1);
         softAssert.assertEquals(primaryHeaderPage.getShoppingCartBadge(),"1");
@@ -41,10 +63,18 @@ public class AddRemoveProductsInProductPageTest extends BaseTest {
         softAssert.assertAll();
     }
 
-    @Test
+    @Test(testName = "Удаление одного продукта с общей страницы",
+            groups = {"regress","cart","ui"},
+            description = "Удаление одного продукта из корзины с общей страницы",
+            retryAnalyzer = Retry.class)
+    @Description("Удаление одного продукта из корзины с общей страницы")
+    @Severity(SeverityLevel.CRITICAL)
+    @Epic("SauseDemo-1.0")
+    @Feature("Cart in SauseDemo")
+    @Story("Удаление товаров")
     public void removeProductFromCart() {
         SoftAssert softAssert = new SoftAssert();
-        String productName = "Sauce Labs Onesie";
+        String productName = productsPage.getProductName();
         softAssert.assertEquals(productsPage.getButtonAddOrRemove(productName),"Add to cart");
         productsPage.clickButtonAddOrRemove(productName);
         softAssert.assertEquals(primaryHeaderPage.getShoppingCartBadge(),"1");

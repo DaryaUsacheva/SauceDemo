@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,7 @@ public class PrimaryHeaderPage {
         this.driver = driver;
     }
 
+    @Step("Проверка наличия иконки с количеством товаров в корзине")
     public boolean isShoppingCartBadge() {
         try {
             driver.findElement(shoppingCartBadge).isDisplayed();
@@ -23,6 +25,7 @@ public class PrimaryHeaderPage {
         }
     }
 
+    @Step("Получение количества товаров в корзине")
     public String getShoppingCartBadge() {
         return driver.findElement(shoppingCartBadge).getText();
     }
