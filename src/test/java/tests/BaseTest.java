@@ -17,7 +17,7 @@ import pages.ProductsPage;
 
 import java.time.Duration;
 
-import static utils.AllureUtils.takeScreenshot;
+//import static utils.AllureUtils.takeScreenshot;
 
 public class BaseTest {
 
@@ -51,9 +51,9 @@ public class BaseTest {
 
     @AfterMethod(alwaysRun = true)
     public void quit(ITestResult result) {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            takeScreenshot(driver);
-        }
+//        if (ITestResult.FAILURE == result.getStatus()) {
+//            takeScreenshot(driver);
+//        }
         driver.quit();
     }
 }

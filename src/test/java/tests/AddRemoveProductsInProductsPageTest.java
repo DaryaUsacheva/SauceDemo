@@ -16,8 +16,7 @@ public class AddRemoveProductsInProductsPageTest extends BaseTest {
     @Test(testName = "Добавление одного продукта",
             groups = {"smoke","cart","ui"},
             timeOut = 5000,
-            description = "Добавление одного продукта с общей страницы",
-            retryAnalyzer = Retry.class)
+            description = "Добавление одного продукта с общей страницы")
     @Description("Добавление одного продукта с общей страницы")
     @Severity(SeverityLevel.CRITICAL)
     @Epic("SauseDemo-1.0")
@@ -37,8 +36,7 @@ public class AddRemoveProductsInProductsPageTest extends BaseTest {
     @Test(testName = "Добавление двух продуктов",
             groups = {"regress","cart","ui"},
             timeOut = 5000,
-            description = "Добавление двух продуктов с общей страницы",
-            retryAnalyzer = Retry.class)
+            description = "Добавление двух продуктов с общей страницы")
     @Description("Добавление двух продуктов с общей страницы")
     @Severity(SeverityLevel.CRITICAL)
     @Epic("SauseDemo-1.0")
@@ -65,8 +63,7 @@ public class AddRemoveProductsInProductsPageTest extends BaseTest {
 
     @Test(testName = "Удаление одного продукта с общей страницы",
             groups = {"regress","cart","ui"},
-            description = "Удаление одного продукта из корзины с общей страницы",
-            retryAnalyzer = Retry.class)
+            description = "Удаление одного продукта из корзины с общей страницы")
     @Description("Удаление одного продукта из корзины с общей страницы")
     @Severity(SeverityLevel.CRITICAL)
     @Epic("SauseDemo-1.0")
