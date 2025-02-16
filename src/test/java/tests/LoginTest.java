@@ -19,8 +19,7 @@ public class LoginTest extends BaseTest {
     @Test(testName = "Аутентификация в системе",
             groups = {"smoke","auth","ui"},
             timeOut = 2000,
-            description = "Аутентификация в системе с валидными логином и паролем стандартного пользователя",
-            retryAnalyzer = Retry.class)
+            description = "Аутентификация в системе с валидными логином и паролем стандартного пользователя")
     @Description("Аутентификация в системе с валидными логином и паролем стандартного пользователя")
     @Severity(SeverityLevel.BLOCKER)
     @Epic("SauseDemo-1.0")
@@ -46,8 +45,7 @@ public class LoginTest extends BaseTest {
             groups = {"smoke","auth","ui"},
             timeOut = 2000,
             description = "Аутентификация в системе с различными ошибками",
-            dataProvider = "loginData",
-            retryAnalyzer = Retry.class)
+            dataProvider = "loginData")
     @Description("Аутентификация в системе с различными ошибками")
     @Severity(SeverityLevel.CRITICAL)
     @Epic("SauseDemo-1.0")
