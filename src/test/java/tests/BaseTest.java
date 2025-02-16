@@ -51,9 +51,9 @@ public class BaseTest {
 
     @AfterMethod(alwaysRun = true)
     public void quit(ITestResult result) {
-//        if (ITestResult.FAILURE == result.getStatus()) {
-//            takeScreenshot(driver);
-//        }
+        if (ITestResult.FAILURE == result.getStatus()) {
+            takeScreenshot(driver);
+        }
         driver.quit();
     }
 }
