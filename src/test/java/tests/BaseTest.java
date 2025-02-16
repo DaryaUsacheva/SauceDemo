@@ -17,7 +17,7 @@ import pages.ProductsPage;
 
 import java.time.Duration;
 
-//import static utils.AllureUtils.takeScreenshot;
+import static utils.AllureUtils.takeScreenshot;
 
 public class BaseTest {
 
